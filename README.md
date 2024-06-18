@@ -1,2 +1,2 @@
 # qa-wolf-dashboard
-A take home assignment for QA Wolf Software Engineer position.
+An assignment for QA Wolf Software Engineer position.
