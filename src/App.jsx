@@ -31,5 +31,5 @@ function App() {
     </>
   )
 }
-//initial comment
+//initial comments
 export default App
