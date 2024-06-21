@@ -4,7 +4,7 @@ const Analytics = () => {
   return (
     <div>
       <h2>Analytics</h2>
-      {/* Placeholder for charts */}
+      {/* Placeholder for charts. */}
     </div>
   );
 };
