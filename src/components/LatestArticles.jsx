@@ -16,15 +16,17 @@ const LatestArticles = () => {
       <table>
         <thead>
           <tr>
-            <th>Title</th>
-            <th>Time Ago</th>
-            <th>Points</th>
-            <th>Comments</th>
+            <th className="center">#</th>
+            <th className="center">Title</th>
+            <th className="center">Time Ago</th>
+            <th className="center">Points</th>
+            <th className="center">Comments</th>
           </tr>
         </thead>
         <tbody>
           {articles.map((article, index) => (
             <tr key={index}>
+              <td>{index + 1}</td> {/* Display the row number */}
               <td>{article.title}</td>
               <td>{article.timeAgo}</td>
               <td>{article.points}</td>

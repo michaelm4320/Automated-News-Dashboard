@@ -104,3 +104,8 @@ tbody tr:hover {
     padding: 8px;
   }
 }
+
+/* LatestArticles.css or App.css */
+.center {
+  text-align: center;
+}
