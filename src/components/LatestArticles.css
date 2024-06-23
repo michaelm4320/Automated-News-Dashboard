@@ -1,0 +1,43 @@
+/* src/components/LatestArticles.css */
+
+.table-wrapper {
+    overflow-x: auto;
+    margin: 20px 0;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; /* Adjust as needed */
+  }
+  
+  thead th {
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #1300a2;
+  }
+  
+  tbody tr:hover {
+    background-color: #5a57ff;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+  th {
+    cursor: pointer;
+  }
+  
+  td {
+    text-align: left;
+  }
+  

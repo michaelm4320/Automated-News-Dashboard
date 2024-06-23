@@ -1,5 +1,6 @@
 // src/components/LatestArticles.jsx
 import React, { useEffect, useState } from 'react';
+import './LatestArticles.css'; // Import the CSS file
 
 const LatestArticles = () => {
   const [articles, setArticles] = useState([]);
@@ -11,7 +12,7 @@ const LatestArticles = () => {
   }, []);
 
   return (
-    <div>
+    <div className="table-wrapper">
       <h1>Latest Articles</h1>
       <table>
         <thead>
@@ -26,7 +27,7 @@ const LatestArticles = () => {
         <tbody>
           {articles.map((article, index) => (
             <tr key={index}>
-              <td>{index + 1}</td> {/* Display the row number */}
+              <td>{index + 1}</td>
               <td>{article.title}</td>
               <td>{article.timeAgo}</td>
               <td>{article.points}</td>

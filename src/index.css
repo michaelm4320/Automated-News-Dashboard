@@ -67,44 +67,6 @@ button:focus-visible {
   }
 }
 
-/* index.css */
-
-/* Table styles */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px;
-  border: 2px solid #ddd; /* Add left border */
-}
-
-thead th {
-  background-color: #241e88;
-  border-bottom: 2px solid #ddd;
-  padding: 10px;
-  text-align: left;
-}
-
-tbody td {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-tbody tr:hover {
-  background-color: #241e88;
-}
-
-/* Responsive table */
-@media (max-width: 768px) {
-  table {
-    font-size: 14px;
-  }
-
-  thead th,
-  tbody td {
-    padding: 8px;
-  }
-}
-
 /* LatestArticles.css or App.css */
 .center {
   text-align: center;
