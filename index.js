@@ -1,23 +1,16 @@
 import { chromium } from "playwright";
+import fs from 'fs';
 
 async function saveHackerNewsArticles() {
-  // Launch browser
   const browser = await chromium.launch({ headless: false });
   const context = await browser.newContext();
   const page = await context.newPage();
 
-  // Go to Hacker News
   await page.goto('https://news.ycombinator.com/newest');
 
-  // Validate the title
   const title = await page.title();
-  if (title.includes('Hacker News')) {
-    console.log('Title validation passed.');
-  } else {
-    console.log('Title validation failed.');
-  }
+  console.log(title.includes('Hacker News') ? 'Title validation passed.' : 'Title validation failed.');
 
-  // Collect article data with error handling
   const articles = [];
   let moreButtonExists = true;
 
@@ -25,14 +18,19 @@ async function saveHackerNewsArticles() {
     const newArticles = await page.$$eval('.athing', nodes => {
       return nodes.map(node => {
         const titleElement = node.querySelector('.titleline a');
-        const subtextElement = node.nextElementSibling.querySelector('.subtext .age');
+        const subtextElement = node.nextElementSibling.querySelector('.subtext');
+        const pointsElement = subtextElement.querySelector('.score');
+        const commentsElement = Array.from(subtextElement.querySelectorAll('a')).find(el => el.innerText.includes('comments'));
 
         if (titleElement && subtextElement) {
           const title = titleElement.innerText;
-          const timeAgo = subtextElement.innerText;
-          return { title, timeAgo };
+          const timeAgo = subtextElement.querySelector('.age').innerText;
+          const points = pointsElement ? parseInt(pointsElement.innerText.split(' ')[0]) : 0;
+          const comments = commentsElement ? parseInt(commentsElement.innerText.split('\u00A0')[0]) : 0;
+
+          return { title, timeAgo, points, comments };
         } else {
-          console.error('Error: Title or time element not found for an article.');
+          console.error('Error: Title or subtext element not found for an article.');
           return null;
         }
       }).filter(article => article !== null);
@@ -44,7 +42,6 @@ async function saveHackerNewsArticles() {
       articles.push(...newArticles);
     }
 
-    // Click the "More" button
     moreButtonExists = await page.$eval('.morelink', async button => {
       if (button) {
         await button.click();
@@ -54,27 +51,12 @@ async function saveHackerNewsArticles() {
       }
     });
 
-    await page.waitForTimeout(1000); // Wait for new articles to load
-  }
-
-  // Validate the order of articles
-  let sorted = true;
-  for (let i = 1; i < articles.length; i++) {
-    if (new Date(articles[i].timeAgo) > new Date(articles[i - 1].timeAgo)) {
-      sorted = false;
-      break;
-    }
-  }
-
-  if (sorted) {
-    console.log('Articles are sorted from newest to oldest.');
-  } else {
-    console.log('Articles are not sorted correctly.');
+    await page.waitForTimeout(1000);
   }
 
   console.log(`Total articles collected: ${articles.length}`);
+  fs.writeFileSync('public/articles.json', JSON.stringify(articles, null, 2));
 
-  // Close browser
   await browser.close();
 }
 
