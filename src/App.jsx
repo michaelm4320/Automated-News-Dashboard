@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import LatestArticles from './components/LatestArticles';
 import './App.css';
+import qaWolfLogo from './assets/qa_wolf_logo.png';
+
 
 function App() {
   return (
     <div>
-      <h1>QA Wolf Dashboard</h1>
+      <img src={qaWolfLogo} alt="QA Wolf Logo" className="logo" style={{ height: '9em', width: 'auto' }} />
       <LatestArticles />
     </div>
   )
