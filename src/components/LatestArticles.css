@@ -1,43 +1,52 @@
 /* src/components/LatestArticles.css */
 
 .table-wrapper {
-    overflow-x: auto;
-    margin: 20px 0;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 600px; /* Adjust as needed */
-  }
-  
-  thead th {
-    position: sticky;
-    top: 0;
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: left;
-  }
-  
-  tbody tr:nth-child(even) {
-    background-color: #1300a2;
-  }
-  
-  tbody tr:hover {
-    background-color: #5a57ff;
-  }
-  
-  th, td {
-    border: 1px solid #ddd;
-    padding: 10px;
-  }
-  
-  th {
-    cursor: pointer;
-  }
-  
-  td {
-    text-align: left;
-  }
-  
+  margin-top: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  padding: 12px 16px;
+  text-align: left;
+}
+
+th {
+  background-color: #55608f;
+  color: white;
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+tbody td {
+  position: relative;
+}
+
+tbody td:hover:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -9999px;
+  bottom: -9999px;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: -1;
+}

@@ -1,0 +1,9 @@
+/* src/components/WolfLogo.css */
+.wolf-logo img {
+    width: 150px;
+    transition: transform 0.3s ease;
+}
+
+.wolf-logo img:hover {
+    transform: scale(1.1);
+}

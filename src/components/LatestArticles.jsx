@@ -26,7 +26,7 @@ const LatestArticles = () => {
         </thead>
         <tbody>
           {articles.map((article, index) => (
-            <tr key={index}>
+            <tr key={index}> {/* Assign a unique key prop */}
               <td>{index + 1}</td>
               <td>{article.title}</td>
               <td>{article.timeAgo}</td>
