@@ -1,5 +1,6 @@
 import { chromium } from "playwright";
 import fs from 'fs';
+import path from 'path';
 
 async function saveHackerNewsArticles() {
   const browser = await chromium.launch({ headless: false });
@@ -55,7 +56,8 @@ async function saveHackerNewsArticles() {
   }
 
   console.log(`Total articles collected: ${articles.length}`);
-  fs.writeFileSync('public/articles.json', JSON.stringify(articles, null, 2));
+  const filePath = path.join(__dirname, 'public/articles.json'); // Ensure the path is correct
+  fs.writeFileSync(filePath, JSON.stringify(articles, null, 2));
 
   await browser.close();
 }

@@ -1,5 +1,4 @@
-// src/components/LatestArticles.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import './LatestArticles.css'; // Import the CSS file
 
 const LatestArticles = ({ articles }) => {

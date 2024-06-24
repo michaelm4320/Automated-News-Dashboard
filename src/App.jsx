@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useState } from 'react';
 import LatestArticles from './components/LatestArticles';
 import './App.css';
@@ -9,6 +8,12 @@ function App() {
 
   const fetchArticles = async () => {
     try {
+      // Trigger the Playwright script to update the JSON file
+      await fetch('http://localhost:3001/api/fetch-articles', {
+        method: 'POST',
+      });
+
+      // Fetch the updated articles from the JSON file
       const response = await fetch('http://localhost:3001/api/articles');
       if (!response.ok) {
         throw new Error('Network response was not ok');
