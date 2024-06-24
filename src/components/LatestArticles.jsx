@@ -1,16 +1,8 @@
 // src/components/LatestArticles.jsx
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './LatestArticles.css'; // Import the CSS file
 
-const LatestArticles = () => {
-  const [articles, setArticles] = useState([]);
-
-  useEffect(() => {
-    fetch('/articles.json')
-      .then(response => response.json())
-      .then(data => setArticles(data));
-  }, []);
-
+const LatestArticles = ({ articles }) => {
   return (
     <div className="table-wrapper">
       <h1>Latest Articles</h1>
