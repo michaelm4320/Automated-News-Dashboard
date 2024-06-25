@@ -4,7 +4,7 @@ import './LatestArticles.css'; // Import the CSS file
 const LatestArticles = ({ articles }) => {
   return (
     <div className="table-wrapper">
-      <h1>Latest Articles</h1>
+      
       <table>
         <thead>
           <tr>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import LatestArticles from './components/LatestArticles';
 import './App.css';
-import qaWolfLogo from './assets/qa_wolf_logo.jpg';
+import qaWolfLogo from './assets/qa_wolf_logo.png';
 
 function App() {
   const [articles, setArticles] = useState([]);
@@ -28,7 +28,7 @@ function App() {
   return (
     <div>
       <img src={qaWolfLogo} className="logo" alt="QA Wolf Logo" />
-      <h1>QA Wolf Dashboard</h1>
+      <h1>Latest News Articles</h1>
       <button onClick={fetchArticles}>Fetch Latest Articles</button>
       <LatestArticles articles={articles} />
     </div>
