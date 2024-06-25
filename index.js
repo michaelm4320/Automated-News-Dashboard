@@ -56,7 +56,7 @@ async function saveHackerNewsArticles() {
   }
 
   console.log(`Total articles collected: ${articles.length}`);
-  const filePath = path.join(__dirname, 'public/articles.json'); // Ensure the path is correct
+  const filePath = '../public/articles.json'; // Relative path to the current working directory
   fs.writeFileSync(filePath, JSON.stringify(articles, null, 2));
 
   await browser.close();
