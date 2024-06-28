@@ -21,10 +21,9 @@ app.get('/api/articles', (req, res) => {
 });
 
 app.post('/api/fetch-articles', (req, res) => {
-  // Adjust the path to correctly reference the index.js file
   const scriptPath = path.resolve(__dirname, '../index.js');
 
-  console.log(scriptPath); // Add this line to log the script path
+  console.log(scriptPath); 
 
   exec(`node "${scriptPath}"`, (err, stdout, stderr) => {
     if (err) {

@@ -27,4 +27,13 @@ Client-Side Requests: Tools like Fetch API in JavaScript (for web browsers) or O
 
 Server-Side Handling: APIs created using frameworks like Express (Node.js) or Spring Boot (Java) on the server side receive these requests, process them, and send back the appropriate responses.
 RESTful API Creation: Express.js (for Node.js) and Spring Boot (for Java) are commonly used to create RESTful APIs that handle client requests and interact with databases or external services as needed.
-Specifics of Your React Project:
+
+The four most common HTTP methods used in REST API development are:
+
+GET: Used to fetch data from a server. For example, retrieving a user's profile information or fetching a list of products from an online store.
+
+POST: Used to send data to a server to create or update a resource. For example, submitting a form to create a new user account or adding an item to a shopping cart.
+
+PUT: Used to update a resource on the server. It replaces the entire resource with the new data sent in the request. For example, updating a user's profile information or replacing an existing file.
+
+DELETE: Used to delete a resource on the server. For example, removing a user account or deleting a specific item from a database.
