@@ -23,7 +23,7 @@ Types of APIs:
 RESTful APIs: These are APIs that follow the principles of Representational State Transfer (REST) and use HTTP requests to perform CRUD (Create, Read, Update, Delete) operations on resources.
 Using APIs in Web Development:
 
-Controllers: A controller in web development handles incoming requests, processes the necessary data, and sends back the appropriate responses based on its corresponding API endpoint. It acts as a bridge between the user interface and the backend logic of an application.
+Controllers: Controllers in web development handles incoming requests, processes the necessary data, and sends back the appropriate responses based on its corresponding API endpoint. It acts as a bridge between the user interface and the backend logic of an application.
 
 Client-Side Requests: Tools like Fetch API in JavaScript (for web browsers) or OkHttp in Java (for Android apps) are used to make HTTP requests from client-side applications to server-side APIs.
 
