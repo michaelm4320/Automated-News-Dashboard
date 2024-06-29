@@ -23,9 +23,12 @@ Types of APIs:
 RESTful APIs: These are APIs that follow the principles of Representational State Transfer (REST) and use HTTP requests to perform CRUD (Create, Read, Update, Delete) operations on resources.
 Using APIs in Web Development:
 
+Controllers: A controller in web development handles incoming requests, processes the necessary data, and sends back the appropriate responses based on its corresponding API endpoint. It acts as a bridge between the user interface and the backend logic of an application.
+
 Client-Side Requests: Tools like Fetch API in JavaScript (for web browsers) or OkHttp in Java (for Android apps) are used to make HTTP requests from client-side applications to server-side APIs.
 
 Server-Side Handling: APIs created using frameworks like Express (Node.js) or Spring Boot (Java) on the server side receive these requests, process them, and send back the appropriate responses.
+
 RESTful API Creation: Express.js (for Node.js) and Spring Boot (for Java) are commonly used to create RESTful APIs that handle client requests and interact with databases or external services as needed.
 
 The four most common HTTP methods used in REST API development are:
