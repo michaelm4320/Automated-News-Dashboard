@@ -20,8 +20,7 @@ This project is a full-stack web application built using React, Vite, Node.js, E
 APIs (Application Programming Interfaces) are interfaces that allow different software applications to communicate with each other. They define a set of rules and protocols that enable data exchange between systems.
 Types of APIs:
 
-RESTful APIs: These are APIs that follow the principles of Representational State Transfer (REST) and use HTTP requests to perform CRUD (Create, Read, Update, Delete) operations on resources.
-Using APIs in Web Development:
+RESTful APIs: These are APIs that follow the principles of Representational State Transfer (REST) and use HTTP requests.
 
 Controllers: Controllers in web development handles incoming requests, processes the necessary data, and sends back the appropriate responses based on its corresponding API endpoint. It acts as a bridge between the user interface and the backend logic of an application.
 
